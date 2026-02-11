@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Paleta de colores Polo + Stellar */
+:root {
+  /* Backgrounds */
+  --background: #ffffff;
+  --background-secondary: #f0f7ff;
+
+  /* Text */
+  --foreground: #1a1a1a;
+  --text-secondary: #6b7280;
+
+  /* Brand */
+  --primary: #005DB4;
+  --primary-hover: #0047a0;
+
+  /* Borders */
+  --border: #e5e7eb;
+}
+
+/* @theme removed for v3 compatibility */
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-snpro), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
