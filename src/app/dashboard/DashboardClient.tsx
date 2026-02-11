@@ -38,7 +38,14 @@ export default function DashboardClient({ token, email }: { token: string, email
                 })
 
                 if (!res.ok) {
-                    const errData = await res.json();
+                    const errText = await res.text();
+                    console.error("API Error Response:", errText);
+                    let errData;
+                    try {
+                        errData = JSON.parse(errText);
+                    } catch (e) {
+                        errData = { error: `API Error ${res.status}: ${errText.slice(0, 50)}...` };
+                    }
                     throw new Error(errData.error || 'Onboarding failed')
                 }
 
